@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+		<defName>VPE_BladerSTNL</defName>
+		<label>Blader</label>
+		<description>Wield the power of the spell frame in different ways.</description>
+		<background>UI_BladerSTNL/Tree/BladerTreeBase</background>
+		<altBackground>UI_BladerSTNL/Tree/BladerTreeBase</altBackground>
+		<tab>Misc</tab>
+		<tooltip>Wield the power of the spell frame in different ways.</tooltip>
+		<lockedReason>No Spell Frame</lockedReason>
+		    <modExtensions>
+        <li Class="VPE_Blader.PsycasterPathExtension">
+            <requiredHediffs>
+			<li>VPE_StandardSpellFrameSNTL</li>
+			<li>VPE_NecroSpellFrameSNTL</li>
+			<li>VPE_ConstructSpellFrameSNTL</li>
+			<li>VPE_ChurchSpellFrameSNTL</li>
+			</requiredHediffs>
+        </li>
+    </modExtensions>
+	</VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>

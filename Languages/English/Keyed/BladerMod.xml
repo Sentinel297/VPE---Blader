@@ -1,0 +1,60 @@
+
+<LanguageData>
+
+	<!-- =======Mod Settings======= -->
+	
+  <!-- Designations -->
+  <BladerChurchSTNL>Church</BladerChurchSTNL>
+  <BladerConstructSTNL>Construct</BladerConstructSTNL>
+  <BladerNecroSTNL>Necro</BladerNecroSTNL>
+
+  <!-- Spears Of Punishment -->
+  <SpearsOfPunishmentSTNL>Spears Of Punishment</SpearsOfPunishmentSTNL>
+  <SpearsOfPunishmentDamageSTNL>Damage: {0}</SpearsOfPunishmentDamageSTNL>
+  <SpearsOfPunishmentPenSTNL>Armor Penetration: {0}</SpearsOfPunishmentPenSTNL>
+  <SpearsOfPunishmentStunDurationSTNL>Stun duration: {0} Ticks (60 ticks = 1 second)</SpearsOfPunishmentStunDurationSTNL>
+
+  <!-- Lightning Tornado -->
+  <BladerLightningTornadoSTNL>Lightning Tornado</BladerLightningTornadoSTNL>
+  <BladerLightningTornadoDamageSTNL>Damage: {0}</BladerLightningTornadoDamageSTNL>
+  <BladerLightningTornadoPenSTNL>Armor Penetration: {0}</BladerLightningTornadoPenSTNL>
+  <BladerLightningTornadoStunSTNL>Stun duration: {0} Ticks (60 ticks = 1 second)</BladerLightningTornadoStunSTNL>
+
+  <!-- Railgun -->
+  <BladerRailgunSTNL>Railgun</BladerRailgunSTNL>
+  <BladerRailgunDamageSTNL>Damage: {0}</BladerRailgunDamageSTNL>
+  <BladerRailgunPenSTNL>Armor Penetration: {0}</BladerRailgunPenSTNL>
+  <BladerRailgunBuildingDamageSTNL>Damage To Buildings: {0}</BladerRailgunBuildingDamageSTNL>
+
+  <!-- Missile Barrage -->
+  <BladerMissileBarrageSTNL>Missile Barrage</BladerMissileBarrageSTNL>
+  <BladerMissilesPerBarrageSTNL>Missiles per Barrage: {0}</BladerMissilesPerBarrageSTNL>
+
+  <!-- Ex-Railgun -->
+  <BladerEXRailgunSTNL>EX Railgun</BladerEXRailgunSTNL>
+  <BladerEXRailgunDamageSTNL>Damage: {0}</BladerEXRailgunDamageSTNL>
+  <BladerEXRailgunPenSTNL>Armor Penetration: {0}</BladerEXRailgunPenSTNL>
+  <BladerEXRailgunBuildingDamageSTNL>Damage To Buildings: {0}</BladerEXRailgunBuildingDamageSTNL>
+  <EXRailgunExplosionDamageSTNL>Explosion Damage: {0}</EXRailgunExplosionDamageSTNL>
+
+  <!-- Piercing Claw -->
+  <PiercingClawSTNL>Piercing Claw</PiercingClawSTNL>
+  <PiercingClawDrainSTNL>Blood Drain On Self: {0}%</PiercingClawDrainSTNL>
+
+  <!-- Ethereal Orb -->
+  <EtherealOrbSTNL>Ethereal Orb</EtherealOrbSTNL>
+  <OrbDamageSTNL>Damage: {0}</OrbDamageSTNL>
+  <OrbDamagePenSTNL>Armor Penetration: {0}</OrbDamagePenSTNL>
+
+  <!-- Terra Inferno -->
+  <TerraInfernoSTNL>Terra Inferno</TerraInfernoSTNL>
+  <TerraInfernoExplosionCountSTNL>Explosion Count: {0}</TerraInfernoExplosionCountSTNL>
+  <TerraInfernoExplosionDamageSTNL>Explosion Damage: {0}</TerraInfernoExplosionDamageSTNL>
+  <TerraInfernoExplosionDamagePenSTNL>Armor Penetration: {0}</TerraInfernoExplosionDamagePenSTNL>
+
+  <!-- Minimum Pain -->
+  <MinimumPainSTNL>Minimum Pain</MinimumPainSTNL>
+  <MinimumPainExplosionDamageSTNL>Explosion Damage: {0}</MinimumPainExplosionDamageSTNL>
+  <MinimumPainExplosionDamagePenSTNL>Armor Penetration: {0}</MinimumPainExplosionDamagePenSTNL>
+
+</LanguageData>

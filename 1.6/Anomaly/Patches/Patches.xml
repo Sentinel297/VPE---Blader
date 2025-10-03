@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="VPE_NecroSpellFrameSNTL"]/hediffClass</xpath>
+    <value>
+    <hediffClass>Hediff_DeathRefusal</hediffClass>
+    </value>
+  </Operation>
+  
+    <Operation Class="PatchOperationReplace">
+    <xpath>Defs/VEF.Abilities.AbilityDef[defName="VPE_PiercingClawSTNL"]/castSound</xpath>
+    <value>
+    <castSound>MeatExplosionLarge</castSound>
+    </value>
+  </Operation>
+
+
+</Patch>
