@@ -1,0 +1,371 @@
+<Defs>
+
+	
+	<!-- ====Frame Abilities==== -->
+
+	<!-- Counter Field -->
+	<HediffDef>
+		<defName>VPE_CounterFieldSNTL</defName>
+		<label>Counter Field</label>
+		<description>This creature is protecting itself by using a counter field, attacks will be returned to the attacker as long as this is active.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(0, 0.7, 1.0)</defaultLabelColor>
+		<makesSickThought>False</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="VPE_Blader.HediffCompProperties_CounterField">
+				<reflectChance>1.0</reflectChance>
+				<!-- always deflect -->
+				<reflectDamageFactor>1.0</reflectDamageFactor>
+				<!-- reflect 100% damage -->
+			</li>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>5000</disappearsAfterTicks>
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+		<li>
+		</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+	<defName>VPE_BladerParriedSTNL</defName>
+	<label>Counter Field: Parried Attack</label>
+	<description>This creature can't be stunned or take damage. (Used to avoid weird situations, also how are you seeing this?)</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999999999999</maxSeverity>
+	<defaultLabelColor>(0.7, 0.7, 1)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>5</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+			<statFactors>
+				<IncomingDamageFactor>0</IncomingDamageFactor>
+				<StaggerDurationFactor>0</StaggerDurationFactor>
+				<Flammability>0</Flammability>
+			</statFactors>
+		</li>
+	</stages>
+</HediffDef>
+	
+	<!-- Mud Shield -->
+		<HediffDef>
+		<defName>VPE_MudShieldSNTL</defName>
+		<label>Shield</label>
+		<description>This creature is holding up a shield that will reduce incoming damage by 80%.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(0.5, 0.7, 1.0)</defaultLabelColor>
+		<makesSickThought>False</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="VPE_Blader.HediffCompProperties_Shield">
+				<damageReduction>0.8</damageReduction>
+				<psyfocusDrainPerSecond>0.03</psyfocusDrainPerSecond>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+		<li>
+		</li>
+		</stages>
+	</HediffDef>
+		<!-- Piercing Claw -->
+		<HediffDef>
+		<defName>VPE_PiercingClawSNTL</defName>
+		<label>Piercing Claw</label>
+		<description>This creature will inflict pierce buildup on successful hits, causing 30% blood loss to the target once this buildup reaches 100%.\n\n The duration can be extended by damaging creatures.(10 extra seconds per hit, 2 hours max.)</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+		<makesSickThought>False</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="VPE_Blader.HediffCompProperties_PiercingClaw"/>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>5000</disappearsAfterTicks>
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+		<li>
+		</li>
+		</stages>
+	</HediffDef>
+	
+		<HediffDef>
+		<defName>VPE_PierceBuildupSNTL</defName>
+		<label>Pierce Buildup</label>
+		<description>This creature is suffering from pierce buildup, they will suffer from blood loss should this condition reach 100%.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.0001</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+		<makesSickThought>False</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>True</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="VPE_Blader.HediffCompProperties_PierceDebuff"/>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>30000</disappearsAfterTicks>
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+		<li>
+		</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- ====Spells==== -->
+	
+	<!-- EX-Railgun -->
+	
+<HediffDef>
+	<defName>VPE_EXRailgunSTNL</defName>
+	<label>Hit by EX-Railgun</label>
+	<description>This creature is about to explode.</description>
+	<hediffClass>VPE_Blader.Hediff_EX_Railgun</hediffClass>
+	<initialSeverity>0.0001</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>121</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li MayRequire="Ludeon.Rimworld.Anomaly" Class="HediffCompProperties_Effecter">
+			<stateEffecter>RevenantHypnosis</stateEffecter>
+		</li>
+	</comps>
+	<stages>
+		<li>
+		<becomeVisible>False</becomeVisible>
+		</li>
+	</stages>
+</HediffDef>
+
+<!-- Casting Lightning Tornado -->
+
+<HediffDef>
+	<defName>VPE_CastingLightningTornadoSTNL</defName>
+	<label>Hidden Lightning Tornado Hediff</label>
+	<description>This creature is currently pulling enemies closer.</description>
+	<hediffClass>VPE_Blader.Hediff_LightningTornado</hediffClass>
+	<initialSeverity>0.0001</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>1800</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+		<becomeVisible>False</becomeVisible>
+			<statFactors>
+				<MoveSpeed>-1000</MoveSpeed>
+			</statFactors>
+		</li>
+	</stages>
+</HediffDef>
+
+<!-- Trailblazer's Oath -->
+
+		<HediffDef>
+		<defName>VPE_TrailblazersOathSNTL</defName>
+		<label>Trailblazer's Oath</label>
+		<description>Harmonized metal resonance is increasing this creature's damage output.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<defaultLabelColor>(0.3, 0.3, 0.7)</defaultLabelColor>
+		<makesSickThought>False</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>False</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>30000</disappearsAfterTicks>
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+		<li>
+		<statFactors>
+		<VEF_MeleeAttackDamageFactor>1.5</VEF_MeleeAttackDamageFactor>
+		<VEF_RangeAttackDamageFactor>1.5</VEF_RangeAttackDamageFactor>
+		</statFactors>
+		</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- Void -->
+	
+  <ThingDef Name="VoidFieldBaseSTNL" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <statBases>
+      <SellPriceFactor>0.70</SellPriceFactor>
+    </statBases>
+		<comps>
+		<li Class="VPE_Blader.CompProperties_EffecterBase">
+			<effecterDef>VPE_VoidFieldSTNL</effecterDef>
+			<scale>2.8</scale>
+		</li>
+	</comps>
+  </ThingDef>	
+	
+<ThingDef ParentName="VoidFieldBaseSTNL">
+	<defName>VPE_VoidFieldSTNL</defName>
+	<label>Void Field</label>
+	<description>A phenomenon that prevents anyone nearby to use psycasts.</description>
+	<useHitPoints>false</useHitPoints>
+	<tickerType>Normal</tickerType>
+	<drawerType>RealtimeOnly</drawerType>
+	<selectable>False</selectable>
+	<fillPercent>0</fillPercent>
+	<graphicData>
+		<texPath>UI_BladerSTNL/None</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(1,1)</drawSize>
+		<shadowData>
+			<volume>(0, 0, 0)</volume>
+			<offset>(0, 0, -0.2)</offset>
+		</shadowData>
+	</graphicData>
+	<altitudeLayer>Building</altitudeLayer>
+	<building>
+		<ai_chillDestination>false</ai_chillDestination>
+	</building>
+	<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	<uiOrder>2420</uiOrder>
+	<rotatable>false</rotatable>
+	<statBases>
+		<WorkToBuild>8000</WorkToBuild>
+		<Mass>0.01</Mass>
+		<Flammability>0</Flammability>
+	</statBases>
+	<size>(1,1)</size>
+	<comps>
+		<li Class="CompProperties_DestroyAfterDelay">
+			<delayTicks>10000</delayTicks>
+		</li>
+		<li Class="CompProperties_CauseHediff_AoE">
+			<range>6.9</range>
+			<onlyTargetMechs>False</onlyTargetMechs>
+			<hediff>VPE_VoidFieldSTNL</hediff>
+		</li>
+		<li Class="VPE_Blader.CompProperties_RemoveHediffs">
+			<hediffDefs>
+				<li MayRequire="Ludeon.Rimworld.Anomaly">HoraxianInvisibility</li>
+				<li>PsychicInvisibility</li>
+			</hediffDefs>
+			<tickInterval>60</tickInterval>
+			<radius>6.9</radius>
+		</li>
+		<li MayRequire="Ludeon.Rimworld.Anomaly" Class="VPE_Blader.CompProperties_EffecterBase">
+			<effecterDef>VoidNodeAttached</effecterDef>
+			<scale>2</scale>
+		</li>
+	</comps>
+	<placeWorkers>
+		<li>PlaceWorker_ShowCauseHediffAoE</li>
+	</placeWorkers>
+	<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+</ThingDef>
+
+<HediffDef>
+	<defName>VPE_VoidFieldSTNL</defName>
+	<label>Void Field</label>
+	<description>This creature's psychic sensitivity is being suppressed by a Void Field.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(1, 0.5, 0.5)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>5</disappearsAfterTicks>
+			<showRemainingTime>False</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<statFactors>
+				<PsychicSensitivity>0</PsychicSensitivity>
+			</statFactors>
+		</li>
+	</stages>
+</HediffDef>
+	
+</Defs>

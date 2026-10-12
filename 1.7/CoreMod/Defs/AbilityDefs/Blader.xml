@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- Level 1 -->
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_CounterFieldSTNL</defName>
+	<label>Counter Field</label>
+	<description>Strategically time a burst of energy at the palm of your hand to reflect damage back to the attacker.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/CounterField</iconPath>
+	<castTime>30</castTime>
+	<durationTime>600</durationTime>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>6</level>
+			<order>2</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>20</entropyGain>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_CounterFieldSNTL</hediff>
+			<!-- <bodyPartToApply>Brain</bodyPartToApply> -->
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+<!-- Level 2 -->
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MudShieldSTNL</defName>
+	<label>Shield</label>
+	<description>Form a shield that will absorb up to 80% of incoming damage, the shield will disappear upon running out of psyfocus. (1% psyfocus drain per second / 5% psyfocus loss per hit taken)</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/Shield</iconPath>
+	<castTime>20</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>5</level>
+			<order>1</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_CounterFieldSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_MudShieldSNTL</hediff>
+			<!-- <bodyPartToApply>Brain</bodyPartToApply> -->
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+<!-- Level 3 -->
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_PiercingClawSTNL</defName>
+	<label>Piercing Claw</label>
+	<description>Sacrifice 30% of your blood to gain the piercing claw effect that will inflict pierce debuff on target enemies, pierce will induce blood loss in the target enemy once it reaches 100%.\n\nPiercing Claw's duration can be extended by damaging creatures.\nCan kill the user.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/PiercingClaw</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_PiercingClaw</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>5</level>
+			<order>2</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_MudShieldSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+<!-- Level 4 -->
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ThunderStepSTNL</defName>
+	<label>Thunder Step</label>
+	<description>Cause a lightning strike to hit your position then move to the target location.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/ThunderStep</iconPath>
+	<castTime>10</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>7.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_ThunderStep</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>4</level>
+			<order>2</order>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_PiercingClawSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+	
+	<!-- ====Spells==== -->
+	
+	<!-- Void -->
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_VoidFieldSTNL</defName>
+	<label>Void Field</label>
+	<description>One of the forbidden Void spells, suppresses the psychic sensitivity of creatures in the area of effect, preventing them from using psychic abilities. Capable of revealing invisible entities.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/VoidField</iconPath>
+	<castTime>120</castTime>
+	<targetMode>Location</targetMode>
+	<durationTime>10000</durationTime>
+	<chance>0</chance>
+	<range>25.9</range>
+	<radius>6.9</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_SpawnBuilding</abilityClass>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>6</level>
+			<order>1</order>
+			<psyfocusCost>0.18</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_CounterFieldSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Building">
+			<building>VPE_VoidFieldSTNL</building>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+	
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_PossessFrameSTNL</defName>
+		<label>Possess Frame</label>
+		<description>One of the forbidden Void spells, transfer your consciousness into the spell frame and send it flying onto the target's arm. The spell frame will then upload your consciousness into the target and transfer their consciousness to your previous body, effectively swapping bodies.\n\nRequires a spell frame to use.</description>
+		<iconPath>UI_BladerSTNL/Abilities/Blader/Possess</iconPath>
+		<castTime>180</castTime>
+		<targetMode>Pawn</targetMode>
+		<chance>1</chance>
+		<range>7.9</range>
+		<needsTicking>true</needsTicking>
+		<goodwillImpact>0</goodwillImpact>
+		<abilityClass>VPE_Blader.Ability_PossessFrame</abilityClass>
+		<castSound>VPE_PsychicDrone_Cast</castSound>
+		<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_BladerSTNL</path>
+				<level>6</level>
+				<order>3</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+				<li>VPE_PiercingClawSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	
+	<!-- Blader -->
+	
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_AbilityReconstructionSTNL</defName>
+	<label>Ability Reconstruction</label>
+	<description>One of the basic spells used by bladers when facing tough opponents. Refunds psycast points spent on abilities and level-ups, allowing for quick adaptation.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/AbilityReconstruction</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_Reconstruction</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>7</level>
+			<order>1</order>
+			<psyfocusCost>0.20</psyfocusCost>
+			<entropyGain>0</entropyGain>
+							<prerequisites>
+				<li>VPE_CounterFieldSTNL</li>
+				</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_PartialReconstructionSTNL</defName>
+	<label>Partial Reconstruction</label>
+	<description>One of the basic Blader spells, consumes psychic energy to close the worst bleeding wound, will heal the next worst wound if the user isn't bleeding.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/PartialReconstruction</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_PartialReconstruction</abilityClass>
+	<castSound>PsycastPsychicEffect</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>7</level>
+			<order>2</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>15</entropyGain>
+			<prerequisites>
+				<li>VPE_AbilityReconstructionSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_TrailblazersOathSTNL</defName>
+	<label>Trailblazer's Oath</label>
+	<description>A master level spell used by legendary Trailblazers. Harmonizes the user with intense metal resonance, increasing attack for a short duration.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/Oath</iconPath>
+	<castTime>60</castTime>
+	<durationTime>10000</durationTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<radius>0</radius>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castSound>VPE_ControlledFrenzy_Cast</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>8</level>
+			<order>2</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+				<li>VPE_PartialReconstructionSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_TrailblazersOathSNTL</hediff>
+			<!-- <bodyPartToApply>Brain</bodyPartToApply> -->
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+	
+	
+	<!-- Construct -->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_RailgunSTNL</defName>
+	<label>Railgun</label>
+	<description>One of the basic construct spells. Shoots a beam of energy that will deal damage to anyone it passes through.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/Railgun</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_Railgun</abilityClass>
+	<castSound>VPE_FireBeam_Cast</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>3</level>
+			<order>1</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>10</entropyGain>
+				<prerequisites>
+				<li>VPE_MudShieldSTNL</li>
+				</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MissileBarrageSTNL</defName>
+	<label>Missile Barrage</label>
+	<description>An advanced construct spell, manifests a barrage of missiles to attack the target.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/MissileBarrage</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>20.9</range>
+	<radius>2.9</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_MissileBarrage</abilityClass>
+	<castSound>Shot_IncendiaryLauncher</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+				<li>VPE_RailgunSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_EXRailgunSTNL</defName>
+	<label>EX-Railgun</label>
+	<description>One of the master level construct spells, shoots a target with a beam of energy, every creature between the caster and the target will both take direct damage and explode after a short time.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/ExRailgun</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_EX_Railgun</abilityClass>
+	<castSound>VPE_Explosion</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>20</entropyGain>
+			<prerequisites>
+				<li>VPE_MissileBarrageSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Church -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_LightningBoltSTNL</defName>
+	<label>Lightning Bolt</label>
+	<description>One of the basic Church spells, Unleashes psychic energy to summon a lightning strike at the target location.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/LightningBolt</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<radius>1.5</radius>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_LightningBolt</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>3</level>
+			<order>2</order>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_ThunderStepSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_SpearsOfPunishmentSTNL</defName>
+	<label>Spears Of Punishment</label>
+	<description>One of the advanced Church spells, summons a circle of lightning spears around the target, impaling it and unleashing a powerful EMP discharge capable of stunning organic targets.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/SpearsOfJudgement</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<radius>3</radius>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_SpearsOfPunishment</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>2</level>
+			<order>2</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>30</entropyGain>
+				<prerequisites>
+				<li>VPE_LightningBoltSTNL</li>
+				</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_LightningTornadoSTNL</defName>
+		<label>Lightning Tornado</label>
+		<description>A master level spell of the Church, manifests a lightning storm to pull enemies toward the caster, detonating it to unleash a devastating explosion capable of stunning creatures for a long time.</description>
+		<iconPath>UI_BladerSTNL/Abilities/Blader/LightningTornado</iconPath>
+		<castTime>0</castTime>
+		<targetMode>Self</targetMode>
+		<chance>0</chance>
+		<radius>5</radius>
+		<range>0</range>
+		<needsTicking>true</needsTicking>
+		<goodwillImpact>0</goodwillImpact>
+		<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+		<castSound>VPE_FireTornado_Cast</castSound>
+		<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_BladerSTNL</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.20</psyfocusCost>
+				<entropyGain>40</entropyGain>
+								<prerequisites>
+				<li>VPE_SpearsOfPunishmentSTNL</li>
+				</prerequisites>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_CastingLightningTornadoSTNL</hediff>
+				<!-- <bodyPartToApply>Brain</bodyPartToApply> -->
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>RaisedRock_Collapse</effecterDef>
+				<maintainForTicks>1</maintainForTicks>
+				<scale>1</scale>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+
+<!-- Necro -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_EtherealOrbSTNL</defName>
+	<label>Ethereal Orb</label>
+	<description>One of the basic Necro spells, conjures a glowing orb made of psychic energy, resulting in an explosion.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/EtherealOrb</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<radius>3.5</radius>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_EtherealOrb</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>False</canTargetSelf>
+		<canTargetAnimals>False</canTargetAnimals>
+		<canTargetPawns>False</canTargetPawns>
+		<canTargetHumans>False</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>3</level>
+			<order>3</order>
+			<psyfocusCost>0.08</psyfocusCost>
+			<entropyGain>10</entropyGain>
+							<prerequisites>
+				<li>VPE_PiercingClawSTNL</li>
+				</prerequisites>
+		</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>VPE_EtherealOrbSTNL</effecterDef>
+	<maintainForTicks>60</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_TerraInfernoSTNL</defName>
+	<label>Terra Inferno</label>
+	<description>One of the advanced Necro spells, injects psychic energy directly into the ground, causing it to spread and trigger fiery explosions.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/TerraInferno</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<radius>6</radius>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_TerraInferno</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+				<li>VPE_EtherealOrbSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MinimumPainSTNL</defName>
+	<label>Minimum Pain</label>
+	<description>One of the master Necro spells, consumes a massive amount of psyfocus to unleash a devastating explosion that destroys everything in the area, damaging even the caster until going down from the pain or death.</description>
+	<iconPath>UI_BladerSTNL/Abilities/Blader/MinimumPain</iconPath>
+	<castTime>120</castTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<radius>8</radius>
+	<range>0</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Blader.Ability_MinimumPain</abilityClass>
+	<castSound>Explosion_Thump</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_BladerSTNL</path>
+			<level>1</level>
+			<order>3</order>
+			<psyfocusCost>0.90</psyfocusCost>
+			<entropyGain>50</entropyGain>
+				<prerequisites>
+				<li>VPE_TerraInfernoSTNL</li>
+				</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+
+</Defs>
